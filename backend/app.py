@@ -1,8 +1,12 @@
 from flask import Flask,request,jsonify
+from flask_cors import CORS
 from transformers import pipeline
 import atexit
 
 app=Flask(__name__)
+
+# Enable CORS for all routes
+CORS(app)  # This allows requests from any frontend
 
 print ("Loading model...")
 
