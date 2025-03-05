@@ -14,10 +14,9 @@ print ("Loading model...")
 tone_detector=pipeline("text-classification",model="SamLowe/roberta-base-go_emotions")
 
 #email-reply generator model
-# reply_generator=pipeline("text-generation",model="google/flan-t5-large",max_length=200)
 # reply_generator = pipeline("text2text-generation", model="google/flan-t5-base", max_length=300)
 reply_generator = pipeline(
-    "text2text-generation",model="google/flan-t5-large",max_length=200,
+    "text2text-generation",model="google/flan-t5-large",max_length=300,
     repetition_penalty=1.2,  # Helps prevent repeating phrases
     temperature=0.7,          # Makes responses more natural
     top_k=50,                 # Picks from top 50 words (reduces randomness)
